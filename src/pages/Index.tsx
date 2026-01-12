@@ -151,39 +151,111 @@ const Index = () => {
           </motion.div>
           
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-            {categories.map((category, index) => (
-              <motion.div
-                key={category.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+            {/* Wandpanelen Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <Link
+                to="/wandpanelen"
+                className="group block relative rounded-3xl overflow-hidden bg-card border border-border p-8 hover:shadow-xl transition-all duration-300"
               >
-                <Link
-                  to={category.href}
-                  className="group block relative h-[400px] rounded-3xl overflow-hidden"
-                >
-                  <img
-                    src={category.image}
-                    alt={category.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <h3 className="text-2xl font-bold text-background mb-2">
-                      {category.title}
+                <div className="flex items-start gap-6">
+                  <div className="flex-shrink-0 w-24 h-24 bg-primary/10 rounded-2xl flex items-center justify-center">
+                    <svg className="w-12 h-12 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <line x1="3" y1="9" x2="21" y2="9" />
+                      <line x1="3" y1="15" x2="21" y2="15" />
+                      <line x1="9" y1="3" x2="9" y2="21" />
+                      <line x1="15" y1="3" x2="15" y2="21" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      Wandpanelen
                     </h3>
-                    <p className="text-background/80 mb-4">
-                      {category.description}
+                    <p className="text-muted-foreground mb-4">
+                      Stijlvolle akoestische wandpanelen voor elke ruimte. Verminder echo en verbeter de sfeer.
                     </p>
-                    <span className="inline-flex items-center text-background font-medium group-hover:underline">
-                      Bekijk producten
+                    <ul className="space-y-2 text-sm text-muted-foreground mb-4">
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-accent" />
+                        Montage op verticale oppervlakken
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-accent" />
+                        Ideaal voor kantoren & woonkamers
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-accent" />
+                        Decoratief én functioneel
+                      </li>
+                    </ul>
+                    <span className="inline-flex items-center text-primary font-medium group-hover:underline">
+                      Bekijk wandpanelen
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
                   </div>
-                </Link>
-              </motion.div>
-            ))}
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* Plafondpanelen Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <Link
+                to="/plafondpanelen"
+                className="group block relative rounded-3xl overflow-hidden bg-card border border-border p-8 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="flex items-start gap-6">
+                  <div className="flex-shrink-0 w-24 h-24 bg-accent/10 rounded-2xl flex items-center justify-center">
+                    <svg className="w-12 h-12 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M2 8h20" />
+                      <path d="M4 8v2" />
+                      <path d="M8 8v2" />
+                      <path d="M12 8v2" />
+                      <path d="M16 8v2" />
+                      <path d="M20 8v2" />
+                      <rect x="2" y="4" width="20" height="4" rx="1" />
+                      <path d="M6 12h4v4H6z" />
+                      <path d="M14 12h4v4h-4z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-accent transition-colors">
+                      Plafondpanelen
+                    </h3>
+                    <p className="text-muted-foreground mb-4">
+                      Professionele plafondoplossingen voor optimale geluidsabsorptie in kantoren en openbare ruimtes.
+                    </p>
+                    <ul className="space-y-2 text-sm text-muted-foreground mb-4">
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-accent" />
+                        Montage aan het plafond
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-accent" />
+                        Geschikt voor systeemplafonds
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-accent" />
+                        Maximale geluidsabsorptie
+                      </li>
+                    </ul>
+                    <span className="inline-flex items-center text-accent font-medium group-hover:underline">
+                      Bekijk plafondpanelen
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -291,12 +363,26 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative rounded-3xl overflow-hidden"
+            className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary via-primary to-accent"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent" />
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200')] bg-cover bg-center mix-blend-overlay opacity-30" />
+            {/* Abstract pattern instead of photo */}
+            <div className="absolute inset-0 opacity-10">
+              <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                  <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                    <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
+                  </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#grid)" />
+              </svg>
+            </div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
             
             <div className="relative z-10 py-16 px-8 md:py-20 md:px-16 text-center">
+              <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-6">
+                <HeadphonesIcon className="h-8 w-8 text-primary-foreground" />
+              </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-4">
                 Hulp nodig bij het kiezen?
               </h2>
