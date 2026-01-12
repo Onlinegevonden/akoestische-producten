@@ -363,34 +363,20 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary via-primary to-accent"
+            className="relative rounded-3xl p-[2px] bg-gradient-to-r from-primary via-accent to-primary"
           >
-            {/* Abstract pattern instead of photo */}
-            <div className="absolute inset-0 opacity-10">
-              <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <defs>
-                  <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                    <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
-                  </pattern>
-                </defs>
-                <rect width="100" height="100" fill="url(#grid)" />
-              </svg>
-            </div>
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
-            
-            <div className="relative z-10 py-16 px-8 md:py-20 md:px-16 text-center">
-              <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-6">
+            <div className="rounded-3xl bg-card py-16 px-8 md:py-20 md:px-16 text-center">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-6">
                 <HeadphonesIcon className="h-8 w-8 text-primary-foreground" />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                 Hulp nodig bij het kiezen?
               </h2>
-              <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto mb-8">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
                 Onze akoestiek-experts staan voor u klaar. Vraag gratis en vrijblijvend advies 
                 over de beste oplossing voor uw ruimte.
               </p>
-              <Button asChild size="lg" variant="secondary" className="text-base">
+              <Button asChild size="lg" className="text-base">
                 <Link to="/contact">
                   Neem contact op
                   <ArrowRight className="ml-2 h-5 w-5" />
