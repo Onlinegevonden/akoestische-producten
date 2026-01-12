@@ -357,7 +357,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28 bg-secondary/50">
         <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
