@@ -365,7 +365,7 @@ const Index = () => {
             viewport={{ once: true }}
             className="relative rounded-3xl p-[2px] bg-gradient-to-r from-primary via-accent to-primary"
           >
-            <div className="rounded-3xl bg-card py-16 px-8 md:py-20 md:px-16 text-center">
+            <div className="rounded-3xl bg-secondary/50 py-16 px-8 md:py-20 md:px-16 text-center">
               <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-6">
                 <HeadphonesIcon className="h-8 w-8 text-primary-foreground" />
               </div>
